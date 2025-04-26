@@ -64,7 +64,6 @@ interface PostFormProps {
   enableDownvotes?: boolean;
   voteDisplayMode: LocalUserVoteDisplayMode;
   selectedCommunityChoice?: Choice;
-  isNsfwCommunity: boolean;
   onSelectCommunity?: (choice: Choice) => void;
   initialCommunities?: CommunityView[];
   loading: boolean;
@@ -671,7 +670,7 @@ export class PostForm extends Component<PostFormProps, PostFormState> {
             </div>
           </div>
         )}
-        {this.props.enableNsfw && !this.props.isNsfwCommunity && (
+        {this.props.enableNsfw && (
           <div className="form-check mb-3">
             <input
               className="form-check-input"

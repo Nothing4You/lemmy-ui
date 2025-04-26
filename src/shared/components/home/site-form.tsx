@@ -925,9 +925,6 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
 
   handleSiteEnableNsfwChange(i: SiteForm, event: any) {
     i.state.siteForm.enable_nsfw = event.target.checked;
-    if (!event.target.checked) {
-      i.state.siteForm.content_warning = "";
-    }
     i.setState(i.state);
   }
 
@@ -1040,10 +1037,6 @@ export class SiteForm extends Component<SiteFormProps, SiteFormState> {
   }
 
   handleSiteContentWarningChange(val: string) {
-    this.state.siteForm.content_warning = val;
-    if (val) {
-      this.state.siteForm.enable_nsfw = true;
-    }
-    this.setState(this.state);
+    this.setState(s => ((s.siteForm.content_warning = val), s));
   }
 }

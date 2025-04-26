@@ -202,7 +202,6 @@ export class PostListing extends Component<PostListingProps, PostListingState> {
             allLanguages={this.props.allLanguages}
             siteLanguages={this.props.siteLanguages}
             loading={this.state.loading}
-            isNsfwCommunity={this.postView.community.nsfw}
           />
         )}
       </div>
